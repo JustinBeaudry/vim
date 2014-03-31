@@ -6,7 +6,6 @@
 "Enable Pathogen Package Manager"
 execute pathogen#infect()
 
-
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 
@@ -39,9 +38,9 @@ colorscheme twilight
 set guifont=Monaco:h18
 
 "Tab stuff
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 "Show command in bottom right portion of the screen
@@ -180,6 +179,12 @@ iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius
 "Spelling corrects. Just for example. Add yours below.
 iab teh the
 iab Teh The
+
+"-------------------------" 
+" NERDTREE SETTINGS
+" ------------------------"
+autocmd VimEnter * NERDTree | wincmd p
+let g:NERDTreeWinPos = "right"
 
 "--------------------------"
 " PERSONAL SETTINGS 
