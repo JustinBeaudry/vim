@@ -31,7 +31,8 @@ set hidden
 
 "Set the color scheme. Change this to your preference. 
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-colorscheme twilight
+colorscheme base16-default
+set background=dark
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h15
 set guifont=Monaco:h18
@@ -199,3 +200,6 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
 end
+
+# Add Code Folding for Javascript
+au FileType javascript call JavaScriptFold()
