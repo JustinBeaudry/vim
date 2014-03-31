@@ -3,14 +3,16 @@
 " jeffrey@jeffrey-way.com
 " http://net.tutsplus.com
 "
+"Enable Pathogen Package Manager"
+execute pathogen#infect()
+
 
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 
 "Enable filetypes
 filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 syntax on
 
 "Write the old file out when switching between files.
