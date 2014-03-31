@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/jbeaudry/Documents/Learning/C/getting_started'
-let g:netrw_dirhist_2='/Users/jbeaudry/Documents/Learning/C/head_first/3'
