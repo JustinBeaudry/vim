@@ -33,11 +33,10 @@ set hidden
 "Set the color scheme. Change this to your preference. 
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
 " set t_Co=16
-colorscheme base16-eighties
 set background=dark
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h15
-set guifont=Consolas:h14
+set guifont=Consolas:h12
 
 "Tab stuff
 set tabstop=4
@@ -124,10 +123,10 @@ let g:user_zen_expandabbr_key = '<C-e>'
 "Faster shortcut for commenting. Requires T-Comment plugin
 map ,c <c-_><c-_>
 
-"Close the NERDTree
+"Toggle the NERDTree
 map <tab> :NERDTreeToggle<cr>
 
-"Open the FuzzyFinder
+"Toggle the FuzzyFinder
 nmap , :CtrlP<cr>
 
 "Saves time; maps the spacebar to colon
@@ -191,8 +190,9 @@ iab Teh The
 "-------------------------" 
 " NERDTREE SETTINGS
 " ------------------------"
-autocmd VimEnter * NERDTree | wincmd p
-let g:NERDTreeWinPos = "left"
+"  Default to Vim being Open with the Cursor Focus on the Open File
+" autocmd VimEnter * NERDTree | wincmd p
+let g:NERDTreeWinPos = "right"
 
 "--------------------------"
 " PERSONAL SETTINGS 
@@ -201,4 +201,7 @@ let g:NERDTreeWinPos = "left"
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
+  colorscheme base16-eighties
+else
+  colorscheme twilight
 end
