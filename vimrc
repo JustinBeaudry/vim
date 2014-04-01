@@ -32,10 +32,12 @@ set hidden
 
 "Set the color scheme. Change this to your preference. 
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
+" set t_Co=16
 colorscheme base16-eighties
+set background=dark
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h15
-set guifont=Monaco:h18
+set guifont=Consolas:h14
 
 "Tab stuff
 set tabstop=4
@@ -122,6 +124,12 @@ let g:user_zen_expandabbr_key = '<C-e>'
 "Faster shortcut for commenting. Requires T-Comment plugin
 map ,c <c-_><c-_>
 
+"Close the NERDTree
+map <tab> :NERDTreeToggle<cr>
+
+"Open the FuzzyFinder
+nmap , :CtrlP<cr>
+
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
@@ -184,28 +192,13 @@ iab Teh The
 " NERDTREE SETTINGS
 " ------------------------"
 autocmd VimEnter * NERDTree | wincmd p
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 
 "--------------------------"
 " PERSONAL SETTINGS 
 " -------------------------"
-"Example for adding abbreviations - triggered by the spacebar.
-iabbrev mysite ftp://jeff-way.com@jeffrey-way.com/domains/
-
-"Shortcut for logging into my server
-nmap ,server :Nread ftp://jeff-way.com@jeffrey-way.com/domains/<cr>
-
-"Shortcut directly to my theme files on server
-nmap ,theme :Nread ftp://jeff-way.com@jeffrey-way.com/domains/jeffrey-way.com/html/wp-content/themes/magazineJW/<cr>
-
-"For autocompletion of Snipmate plugin
-"let g:acp_behaviorSnipmateLength = 1
-
 "Peep open
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
 end
-
-" Add Code Folding for Javascript
-au FileType javascript call JavaScriptFold()
