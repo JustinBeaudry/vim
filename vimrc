@@ -229,7 +229,7 @@ if has("gui_macvim")
  
   "Map Command Key
   nmap <D-t> :tabnew
-  nmap <D-v> :vnew
+  nmap <D->> :vnew
   nmap <D-h> :nohl
 
   "Hide MacVim toolbar by default
