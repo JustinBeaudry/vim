@@ -111,9 +111,6 @@ set hlsearch
 set ignorecase
 set smartcase
 
-"Hide MacVim toolbar by default
-set go-=T
-
 "Hard-wrap paragraphs of text
 nnoremap <leader>q gqip
 
@@ -229,9 +226,21 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
   colorscheme base16-eighties
-  "Toggle the FuzzyFinder
+ 
+  "Map Command Key
+  nmap <D-t> :tabnew
+  nmap <D-v> :vnew
+  nmap <D-h> :nohl
+
+  "Hide MacVim toolbar by default
+  set go-=T
+
+  "Toggle the FuzzyFinder 
   nmap , :CtrlP<cr>
+
+  "256 Colors
   set t_Co=256
+  "Maximize Window
   set lines=999 columns=999
 else
   colorscheme twilight
