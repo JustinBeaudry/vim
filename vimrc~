@@ -159,9 +159,6 @@ map ,c <c-_><c-_>
 "Toggle the NERDTree
 map <tab> :NERDTreeToggle<cr>
 
-"Toggle the FuzzyFinder
-nmap , :CtrlP<cr>
-
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
@@ -232,7 +229,10 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
   colorscheme base16-eighties
+  "Toggle the FuzzyFinder
+  nmap , :CtrlP<cr>
   set t_Co=256
+  set lines=999 columns=999
 else
   colorscheme twilight
 end
