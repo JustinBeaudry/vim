@@ -6,6 +6,29 @@
 "Enable Pathogen Package Manager"
 execute pathogen#infect()
 
+let $VIMHOME=expand('<sfile>:p:h')
+
+silent function! OSX()
+    return has('macunix')
+endfunction
+silent function! LINUX()
+    return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+    return  (has('win16') || has('win32') || has('win64'))
+endfunction
+
+let $VIMHOME=expand('<sfile>:p:h')
+if WINDOWS()
+    let $VIMHOME=expand('$VIMHOME/vimfiles')
+elseif OSX()
+    let $VIMHOME=expand('$VIMHOME/.vim')
+else
+    let $VIMHOME=expand('$VIMHOME/.vim')
+endif
+
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
+
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 
@@ -32,7 +55,6 @@ set hidden
 
 "Set the color scheme. Change this to your preference. 
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-" set t_Co=16
 set background=dark
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h15
@@ -43,6 +65,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set smarttab
 
 "Show command in bottom right portion of the screen
 set showcmd
@@ -202,6 +225,29 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <c-o> <Plug>PeepOpen
   colorscheme base16-eighties
+  set t_Co=256
 else
   colorscheme twilight
 end
+
+if has('clipboard')
+    set clipboard=unnamed
+endif
+
+set backup
+set backupskip=/tmp/*,/private/tmp/*"   "make vim able to edit crontab files
+
+if has('persistent_undo')
+  set undofile
+  set undolevels=2000
+  set undoreload=10000
+endif
+
+set showmatch
+set matchtime=2
+
+let g:powerline_config_path = expand($VIMHOME) . '/config/powerline'
+let g:Powerline_symbols = 'unicode'
+set rtp+=$VIMHOME/bundle/powerline/powerline/bindings/vim
+set noshowmode
+set fillchars+=stl:\ ,stlnc:\
