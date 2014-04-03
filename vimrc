@@ -1,7 +1,7 @@
-" Justin Beaudry .VIMRC
-" https://github.com/JustinBeaudry/vim/
 "
-" inspired by GabeSoft (https://github.com/gabesoft/dotfiles)
+" Justin Beaudry https://github.com/JustinBeaudry/vim/
+" derived from GabeSoft (https://github.com/gabesoft/dotfiles)
+" & Jeffrey Way
 "
 
 " ----------------"
@@ -226,7 +226,7 @@ nmap <C-l> <C-w>l
 let g:NERDTreeWinPos = "right"
 
 "--------------------------"
-" PERSONAL SETTINGS 
+" COLORSCHEME | GUI & TERM 
 " -------------------------"
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
