@@ -153,9 +153,6 @@ let g:user_zen_expandabbr_key = '<C-e>'
 "Faster shortcut for commenting. Requires T-Comment plugin
 map ,c <c-_><c-_>
 
-"Toggle the NERDTree
-map <tab> :NERDTreeToggle<cr>
-
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
@@ -218,6 +215,12 @@ nmap <C-l> <C-w>l
 " NERDTREE SETTINGS
 " ------------------------"
 let g:NERDTreeWinPos = "right"
+
+"Toggle the NERDTree
+map <tab> :NERDTreeToggle<cr>
+
+"Close NERDTree when buffer is closed
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "--------------------------"
 " COLORSCHEME | GUI & TERM 
