@@ -47,6 +47,9 @@ filetype on
 filetype plugin indent on
 syntax on
 
+"Enable C Highlighting for .ino Arduino files
+au BufNewFile,BufRead *.ino set filetype=c
+
 "Write the old file out when switching between files.
 set autowrite
 
@@ -71,9 +74,9 @@ set background=dark
 set guifont=Consolas:h12
 
 "Tab stuff
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set smarttab
 
