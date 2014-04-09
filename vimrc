@@ -8,11 +8,30 @@
 " ENABLE PATHOGEN
 " ----------------"
 execute pathogen#infect()
+silent! call pathogen#helptags()
+
+" JSHint
+let jshint_read = 1
+let jshint_write = 1
 
 " ----------------"
 " SET $VIMHOME
 " ----------------"
 let $VIMHOME=expand('<sfile>:p:h')
+
+" --------------------"
+" set up directories
+" --------------------"
+" call MkDir($VIMHOME . "/tmp")
+" call MkDir($VIMHOME . "/tmp/bak")
+" call MkDir($VIMHOME . "/tmp/swp")
+" call MkDir($VIMHOME . "/tmp/und")
+" call MkDir($VIMHOME . "/tmp/viw")
+"
+" set backupdir=$VIMHOME/tmp/bak//     "backup
+" set directory=$VIMHOME/tmp/swp//     "swap
+" set undodir=$VIMHOME/tmp/und//       "undo
+" set viewdir=$VIMHOME/tmp/viw//       "view}
 
 " ---------------"
 " SETUP OS NAMES
@@ -131,6 +150,9 @@ set dictionary+=/Users/Home/.vim/dict.txt
 
 "Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
+
+" Sets Emmet Expansion to CTRL+,
+let g:user_emmet_leader_key='<c-,>'
 
 "Split windows below the current window.
 set splitbelow              
