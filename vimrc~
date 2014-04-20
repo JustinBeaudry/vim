@@ -7,12 +7,13 @@
 " ----------------"
 " ENABLE PATHOGEN
 " ----------------"
-execute pathogen#infect()
+silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 " JSHint
-let jshint_read = 1
 let jshint_write = 1
+let g:JSHintHighlightErrorLine = 0
+"let g:syntastic_javascript_checker = ['jshint']
 
 " ----------------"
 " SET $VIMHOME
@@ -22,16 +23,16 @@ let $VIMHOME=expand('<sfile>:p:h')
 " --------------------"
 " set up directories
 " --------------------"
-" call MkDir($VIMHOME . "/tmp")
-" call MkDir($VIMHOME . "/tmp/bak")
-" call MkDir($VIMHOME . "/tmp/swp")
-" call MkDir($VIMHOME . "/tmp/und")
-" call MkDir($VIMHOME . "/tmp/viw")
-"
-" set backupdir=$VIMHOME/tmp/bak//     "backup
-" set directory=$VIMHOME/tmp/swp//     "swap
-" set undodir=$VIMHOME/tmp/und//       "undo
-" set viewdir=$VIMHOME/tmp/viw//       "view}
+call MkDir($VIMHOME . "/tmp")
+call MkDir($VIMHOME . "/tmp/bak")
+call MkDir($VIMHOME . "/tmp/swp")
+call MkDir($VIMHOME . "/tmp/und")
+call MkDir($VIMHOME . "/tmp/viw")
+
+set backupdir=$VIMHOME/tmp/bak//     "backup
+set directory=$VIMHOME/tmp/swp//     "swap
+set undodir=$VIMHOME/tmp/und//       "undo
+set viewdir=$VIMHOME/tmp/viw//       "view}
 
 " ---------------"
 " SETUP OS NAMES
