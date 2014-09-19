@@ -1,4 +1,5 @@
 "
+"
 " Justin Beaudry https://github.com/JustinBeaudry/vim/
 " derived from GabeSoft (https://github.com/gabesoft/dotfiles)
 " & Jeffrey Way
@@ -10,24 +11,21 @@
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
-" JSHint
-let jshint_write = 1
-let g:JSHintHighlightErrorLine = 0
-"let g:syntastic_javascript_checker = ['jshint']
-
-" ----------------"
-" SET $VIMHOME
+" ----------------" " SET $VIMHOME
 " ----------------"
 let $VIMHOME=expand('<sfile>:p:h')
+let $VIMHOME=expand('$VIMHOME/.vim')
+
+source $VIMHOME/functions.vim
 
 " --------------------"
 " set up directories
 " --------------------"
-call MkDir($VIMHOME . "/tmp")
-call MkDir($VIMHOME . "/tmp/bak")
-call MkDir($VIMHOME . "/tmp/swp")
-call MkDir($VIMHOME . "/tmp/und")
-call MkDir($VIMHOME . "/tmp/viw")
+" call MkDir($VIMHOME . "/tmp")
+" call MkDir($VIMHOME . "/tmp/bak")
+" call MkDir($VIMHOME . "/tmp/swp")
+" call MkDir($VIMHOME . "/tmp/und")
+" call MkDir($VIMHOME . "/tmp/viw")
 
 set backupdir=$VIMHOME/tmp/bak//     "backup
 set directory=$VIMHOME/tmp/swp//     "swap
@@ -182,9 +180,6 @@ map ,c <c-_><c-_>
 "Saves time; maps the spacebar to colon
 nmap <space> :
 
-"Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
-
 "Map code completion to , + tab
 imap ,<tab> <C-x><C-o>
 
@@ -195,12 +190,37 @@ set wildmenu
 set wildmode=list:longest
 
 "http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set complete-=1
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" don't sound on errors
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+" auto save info
+set viminfo^=!
+
+" auto reload changed files
+set autoread
+set fileformats+=mac
+
+" diff should split vertically
+set diffopt=vertical
+
+" always report the number of lines changed
+set report=0
+
+" command line history
+if &history < 2000
+  set history=2000
+endif
 
 "Map escape key to jj -- much faster
 imap jj <esc>
