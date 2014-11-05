@@ -1,5 +1,4 @@
 "
-"
 " Justin Beaudry https://github.com/JustinBeaudry/vim/
 " derived from GabeSoft (https://github.com/gabesoft/dotfiles)
 " & Jeffrey Way
@@ -294,6 +293,19 @@ if has("gui_macvim")
 else
   colorscheme twilight
 end
+
+" ------------------------"
+" SET FONT
+" ------------------------"
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 
 " ------------------------"
 " SET TO CLIPBOARD
