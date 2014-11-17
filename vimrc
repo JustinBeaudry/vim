@@ -150,7 +150,7 @@ set dictionary+=/Users/Home/.vim/dict.txt
 nnoremap <leader>v <C-w>v<C-w>l
 
 " Sets Emmet Expansion to CTRL+,
-let g:user_emmet_leader_key='<c-,>'
+let g:user_emmet_leader_key='<c-e>'
 
 "Split windows below the current window.
 set splitbelow              
