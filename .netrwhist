@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/jbeaudry/Documents/Personal_Projects/cold-boot'
 let g:netrw_dirhist_2='/Users/jbeaudry/Documents/Personal_Projects/cold-boot/gulp'
 let g:netrw_dirhist_3='/Users/jbeaudry/cl/src/tigris'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/jbeaudry/cl/src/sub'
 let g:netrw_dirhist_5='/Users/jbeaudry/Documents/Personal_Projects/pathfinder-game-manager/modules'
 let g:netrw_dirhist_6='/Users/jbeaudry/Documents/Learning/node/learnyounode'
 let g:netrw_dirhist_7='/Users/jbeaudry/.vim'
+let g:netrw_dirhist_8='/Users/jbeaudry/Documents/Learning/cpp/game_1'
+let g:netrw_dirhist_9='/Users/jbeaudry/cl/src/mcp'

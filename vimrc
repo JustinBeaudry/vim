@@ -136,6 +136,12 @@ nnoremap <leader>q gqip
 
 "Enable code folding
 set foldenable
+set foldmethod=syntax
+set foldlevelstart=1
+
+let javaScript_fold=1
+
+au FileType javascript call JavaScriptFold()
 
 "Hide mouse when typing
 set mousehide
@@ -309,6 +315,8 @@ endif
 
 " ------------------------"
 " SET TO CLIPBOARD
+=======
+" Set clipboard to same as OS
 " ------------------------"
 if has('clipboard')
     set clipboard=unnamed
